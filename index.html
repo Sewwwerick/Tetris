@@ -124,11 +124,8 @@ function draw() {
 function togglePause() {
   if (over) return;
   paused = !paused;
-  document.getElementById('pauseBtn').textContent = paused ? 'Продолжить' : 'Пауза';
   draw();
 }
-
-document.getElementById('pauseBtn').addEventListener('click', togglePause);
 
 function press(key) {
   if (key === 'p') { togglePause(); return; }
@@ -149,7 +146,6 @@ function reset() {
   field = Array.from({length: H}, () => Array(W).fill(0));
   bag = [];
   score = 0; over = false; dropTimer = 0; paused = false;
-  document.getElementById('pauseBtn').textContent = 'Пауза';
   newPiece();
 }
 
